@@ -1,0 +1,60 @@
+.navBar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: #ffffff;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.navWrapper {
+    margin-bottom: 80px;
+}
+
+.navList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 2em;
+}
+
+.navBar li {
+    list-style: none;
+}
+
+.navBar li a {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #202020;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    position: relative;
+    transition: color 0.4s ease-in-out;
+}
+
+.navBar li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #303030;
+    transition: width 0.4s ease-in-out;
+}
+
+.navBar li a:hover {
+    color: #2c2c2c;
+}
+
+.navBar li a:hover::after {
+    width: 100%;
+}
