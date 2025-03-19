@@ -43,3 +43,6 @@ next-env.d.ts
 # blender
 *.blend
 *.blend1
+
+# Firebase cache
+.firebase/
