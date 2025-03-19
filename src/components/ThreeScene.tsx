@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/Addons.js";
 
 export function ThreeScene() {
   const canvasRef = useRef<HTMLDivElement>(null);
@@ -11,29 +12,36 @@ export function ThreeScene() {
     if (!canvasContainer) return;
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xffffff);
+    scene.background = new THREE.Color(0xfffcf5);
 
-    const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(5, 5, 5);
+    scene.add(directionalLight);
+
+    const camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     canvasContainer.appendChild(renderer.domElement);
 
-    const textureLoader = new THREE.TextureLoader();
-    const earthTexture = textureLoader.load("/assets/textures/world.png");
-    const material = new THREE.MeshBasicMaterial({ map: earthTexture });
+    let globe: THREE.Object3D | null = null;
+    const loader = new GLTFLoader();
+    loader.load("/assets/models/home2.glb", (gltf) => {
+      globe = gltf.scene;
+      scene.add(gltf.scene);
+    }, undefined, function (error) { console.error(error); });
 
-    const geometry = new THREE.SphereGeometry(1, 32, 32);
-    const sphere = new THREE.Mesh(geometry, material);
-    sphere.position.y = -2;
-    sphere.rotation.x = 0.8;
-    scene.add(sphere);
-
-    camera.position.z = 1.1;
-    camera.position.y = -0.9;
+    camera.position.z = 3;
+    camera.position.y = 1.2;
 
     const animate = () => {
+      if (globe) {
+        globe.rotation.z += 0.0015;
+        // globe.rotation.z += 0.005;
+      }
       requestAnimationFrame(animate);
-      sphere.rotation.y += 0.0005;
       renderer.render(scene, camera);
     };
     animate();

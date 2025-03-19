@@ -3,7 +3,7 @@
     top: 0;
     width: 100%;
     z-index: 100;
-    background-color: #ffffff;
+    background-color: #fffcf5;
     padding: 1em 2em;
     display: flex;
     justify-content: center;
@@ -37,7 +37,8 @@
     text-decoration: none;
     padding: 0.5em 1em;
     position: relative;
-    transition: color 0.4s ease-in-out;
+    transform: translateZ(0);
+    transition: color 0.4s ease-in-out, transform 0.1s ease-in-out;
 }
 
 .navBar li a::after {
@@ -53,6 +54,7 @@
 
 .navBar li a:hover {
     color: #2c2c2c;
+    transform: scale(1.1);
 }
 
 .navBar li a:hover::after {
