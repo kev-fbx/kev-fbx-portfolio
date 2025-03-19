@@ -14,7 +14,7 @@ export function ThreeScene() {
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xfffcf5);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
     scene.add(ambientLight);
 
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
@@ -64,8 +64,8 @@ export function ThreeScene() {
     <div
       ref={canvasRef}
       style={{
-        position: "fixed", // Change to fixed to anchor it to the viewport
-        bottom: 0,         // Anchor to the bottom of the screen
+        position: "fixed",
+        bottom: 0,
         left: 0,
         width: "100%",
         height: "100%",

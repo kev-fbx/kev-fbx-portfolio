@@ -1,9 +1,10 @@
 import React from 'react'
+import styles from './about.module.css';
 
 const About = () => {
   return (
       <>
-        <h1>About</h1>
+        <p className={styles.boldHeader}>About me coming soon :)</p>
       </>
   )
 }

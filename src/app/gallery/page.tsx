@@ -1,9 +1,30 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import styles from './gallery.module.css';
 
 const Gallery = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
 
-  let data = [
+  const handleImageClick = (imgSrc: string): void => {
+    const img = new window.Image();
+    img.src = imgSrc;
+    img.onload = () => {
+      setImageDimensions({ width: img.naturalWidth, height: img.naturalHeight });
+      setSelectedImage(imgSrc);
+      setIsPopupVisible(true);
+    };
+  };
+
+  const closePopup = () => {
+    setIsPopupVisible(false);
+    setSelectedImage(null);
+    setImageDimensions({ width: 0, height: 0 });
+  };
+
+  const data = [
     {
       id: 1,
       imgSrc: '/portfolio/apartmentSunset.png',
@@ -40,6 +61,14 @@ const Gallery = () => {
       id: 9,
       imgSrc: '/portfolio/star.png',
     },
+    {
+      id: 10,
+      imgSrc: '/portfolio/pz1.png',
+    },
+    {
+      id: 11,
+      imgSrc: '/portfolio/night.jpg',
+    },
   ]
 
   return (
@@ -47,12 +76,29 @@ const Gallery = () => {
         <div className={styles.gallery}>
           {data.map((item, index) => {
             return (
-              <div className={styles.img} key={index}>
-                <img src={item.imgSrc} style={{ width: '100%' }} />
+              <div className={styles.img} key={index} onClick={() => handleImageClick(item.imgSrc)}>
+                <div className={styles.imgContainer}>
+                  <img src={item.imgSrc} alt={`Gallery item ${item.id}`} />
+                </div>
               </div>
             )
           })}
         </div>
+
+        {isPopupVisible && (
+          <div className={styles.popup} onClick={closePopup}>
+            <div
+              className={styles.popupContent}
+              style={{
+                aspectRatio: `${imageDimensions.width} / ${imageDimensions.height}`,
+              }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button className={styles.closeButton} onClick={closePopup}>×</button>
+              <img src={selectedImage || ''} alt="Selected item" />
+            </div>
+          </div>
+        )}
       </>
   )
 }

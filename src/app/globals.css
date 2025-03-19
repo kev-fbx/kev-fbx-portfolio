@@ -2,3 +2,14 @@ html {
   font-family: 'Inter', sans-serif;
   background-color: #fffcf5;
 }
+
+.boldHeader {
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: italic;
+  color: #38556de0;
+  font-size: 12rem;
+  text-align: center;
+  margin-top: 400px;
+}

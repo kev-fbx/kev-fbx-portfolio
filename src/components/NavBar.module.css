@@ -33,7 +33,7 @@
     display: block;
     font-size: 14px;
     font-weight: 500;
-    color: #202020;
+    color: #38556de0;
     text-decoration: none;
     padding: 0.5em 1em;
     position: relative;
@@ -48,12 +48,12 @@
     left: 0;
     width: 0;
     height: 1px;
-    background-color: #303030;
+    background-color: #38556de0;
     transition: width 0.4s ease-in-out;
 }
 
 .navBar li a:hover {
-    color: #2c2c2c;
+    color: #38556de0;
     transform: scale(1.1);
 }
 

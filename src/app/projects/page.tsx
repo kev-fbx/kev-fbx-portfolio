@@ -1,9 +1,10 @@
 import React from "react";
+import styles from './projects.module.css';
 
 const Projects = () => {
   return (
     <>
-      <h1>Projects</h1>
+      <p className={styles.boldHeader}>Projects coming soon :)</p>
     </>
   );
 }
