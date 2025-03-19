@@ -64,6 +64,7 @@
 .gallery img:hover {
     transform: scale(1.1);
     border-radius: inherit;
+    cursor: pointer;
 }
 
 .popup {
