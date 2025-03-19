@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import { ThreeScene } from '../components/ThreeScene';
 import "./globals.css";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Kevin | Portfolio",
-  description: "./kev.fbx",
-};
+    title: "Kevin | Portfolio",
+    description: "./kev.fbx",
+  };
 
 export default function RootLayout({
   children,
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThreeScene />
+        <ThreeScene/>
         <NavBar />
         {children}
       </body>

@@ -60,5 +60,17 @@ export function ThreeScene() {
     };
   }, []);
 
-  return <div ref={canvasRef} style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: -1 }} />;
+  return (
+    <div
+      ref={canvasRef}
+      style={{
+        position: "fixed", // Change to fixed to anchor it to the viewport
+        bottom: 0,         // Anchor to the bottom of the screen
+        left: 0,
+        width: "100%",
+        height: "100%",
+        zIndex: -1,
+      }}
+    />
+  );
 }

@@ -1,0 +1,40 @@
+.gallery {
+    column-count: 3;
+    column-width: 33%;
+    padding: 0 12px;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    -webkit-column-width: 33%;
+    -moz-column-width: 33%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery .img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    flex: 1 1 calc(33% - 12px); /* Adjusts to 3 columns with gaps */
+    max-width: calc(33% - 12px);
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
