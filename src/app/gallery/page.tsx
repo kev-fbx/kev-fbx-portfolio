@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import styles from './gallery.module.css';
+import Image from 'next/image';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -78,7 +79,7 @@ const Gallery = () => {
             return (
               <div className={styles.img} key={index} onClick={() => handleImageClick(item.imgSrc)}>
                 <div className={styles.imgContainer}>
-                  <img src={item.imgSrc} alt={`Gallery item ${item.id}`} />
+                  <Image src={item.imgSrc} alt={`Gallery item ${item.id}`} />
                 </div>
               </div>
             )
@@ -95,7 +96,7 @@ const Gallery = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <button className={styles.closeButton} onClick={closePopup}>×</button>
-              <img src={selectedImage || ''} alt="Selected item" />
+              <Image src={selectedImage || ''} alt="Selected item" />
             </div>
           </div>
         )}
