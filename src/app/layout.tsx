@@ -3,6 +3,7 @@ import { ThreeScene } from '../components/ThreeScene';
 import "./globals.css";
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
     title: "Kevin | Portfolio",
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <Analytics/>
         <SpeedInsights/>
         <ThreeScene/>
         <NavBar />
