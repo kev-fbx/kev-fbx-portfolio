@@ -4,15 +4,20 @@
   font-weight: 900;
   font-style: italic;
   color: #38556de0;
-  font-size: 8rem;
+  font-size: 12rem;
+  display: flex;
+  justify-content: center;
   text-align: center;
-  margin-top: 200px;
 }
 
 .projects ul {
+  display: flex;
+  justify-content: center;
   text-align: center;
 }
 
 .projects li {
+  display: flex;
+  justify-content: center;
   display: inline-block;
 }
