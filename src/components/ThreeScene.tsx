@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/Addons.js";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 
 export function ThreeScene() {
   const canvasRef = useRef<HTMLDivElement>(null);
@@ -28,6 +29,11 @@ export function ThreeScene() {
 
     let globe: THREE.Object3D | null = null;
     const loader = new GLTFLoader();
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderConfig({ type: 'js' })
+    dracoLoader.setDecoderPath("'https://www.gstatic.com/draco/v1/decoders/'");
+    loader.setDRACOLoader(dracoLoader);
+
     loader.load("/assets/models/home2.glb", (gltf) => {
       globe = gltf.scene;
       scene.add(gltf.scene);
@@ -57,6 +63,7 @@ export function ThreeScene() {
       window.removeEventListener("resize", handleResize);
       canvasContainer.removeChild(renderer.domElement);
       renderer.dispose();
+      dracoLoader.dispose();
     };
   }, []);
 
