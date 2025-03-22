@@ -70,6 +70,14 @@ const Gallery = () => {
       id: 11,
       imgSrc: '/portfolio/night.jpg',
     },
+    {
+      id: 12,
+      imgSrc: '/portfolio/LEIDO_Post_2.png',
+    },
+    {
+      id: 13,
+      imgSrc: '/portfolio/LEIDO_Thumbnail.png',
+    },
   ]
 
   return (
