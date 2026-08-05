@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_7" data-name="Layer 7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1445.62 400">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        font-family: PFPixelscriptPro, 'PF Pixelscript Pro';
+        font-size: 149.84px;
+        letter-spacing: -.25em;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-5 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-3 {
+        font-family: InstrumentSerif-Italic, 'Instrument Serif';
+        font-size: 178.85px;
+        font-style: italic;
+      }
+    </style>
+  </defs>
+  <text class="cls-2" transform="translate(-.91 261.61)"><tspan x="0" y="0">PZ</tspan></text>
+  <text class="cls-3" transform="translate(570.19 205.56)"><tspan class="cls-4" x="0" y="0">V</tspan><tspan x="79.77" y="0">I</tspan><tspan class="cls-1" x="124.48" y="0">D</tspan><tspan x="218.55" y="0">EO INT</tspan><tspan class="cls-5" x="650.83" y="0">R</tspan><tspan x="740.43" y="0">O</tspan></text>
+</svg>

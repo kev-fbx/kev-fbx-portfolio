@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_6" data-name="Layer 6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1372.62 400">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        font-family: PFPixelscriptPro, 'PF Pixelscript Pro';
+        font-size: 149.84px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-5 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-6 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4 {
+        font-family: InstrumentSerif-Italic, 'Instrument Serif';
+        font-size: 178.85px;
+        font-style: italic;
+      }
+    </style>
+  </defs>
+  <text class="cls-3" transform="translate(-1.02 299.16)"><tspan x="0" y="0">C</tspan></text>
+  <text class="cls-4" transform="translate(284.08 207.12)"><tspan class="cls-2" x="0" y="0">OD</tspan><tspan x="188.86" y="0">E</tspan><tspan class="cls-1" x="270.06" y="0">B</tspan><tspan class="cls-6" x="354.3" y="0">RE</tspan><tspan x="525.1" y="0">W 2</tspan><tspan class="cls-5" x="744.55" y="0">0</tspan><tspan class="cls-7" x="824.85" y="0">26</tspan></text>
+</svg>

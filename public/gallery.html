@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEVIN.FBX | 3D Artist</title>
+    <meta name="description" content="Kevin Tran is a 3D animator and motion designer based in Melbourne, Australia.">
+    <meta name="author" content="Kevin Tran">
+    <meta name="keywords" content="3D, animation, designer, Melbourne, portfolio">
+    <meta property="og:title" content="KEVIN.FBX | 3D Artist">
+    <meta property="og:description" content="Kevin Tran is a 3D animator and motion designer based in Melbourne, Australia.">
+    <meta property="og:url" content="https://kevin-fbx.vercel.app">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KEVIN.FBX | 3D Artist">
+    <meta name="twitter:description" content="Kevin Tran is a 3D animator and motion designer based in Melbourne, Australia.">
+    <link rel="stylesheet" href="/src/css/styles.css">
+    <link rel="stylesheet" href="/src/css/gallery.css">
+    <link rel="icon" type="image/png" href="/assets/images/png/favicon.png"/>
+</head>
+<body>
+    <div class="grid">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="cell"></div>
+        <div class="cell" id="split-cell">
+            <div class="sub-grid">
+                <div class="sub-cell logo-cell">
+                    <img src="/assets/images/svg/gallery.svg" alt="Logo" class="logo" />
+                </div>
+                <div class="menu-bar">
+                    <div class="menu-item"><a href="/index.html">HOME</a></div>
+                    <div class="menu-item"><a href="/projects.html">PROJECTS</a></div>
+                    <div class="menu-item"><a href="/gallery.html" class="active">GALLERY</a></div>
+                    <div class="menu-item"><a href="/about.html">ABOUT</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="cell"></div>
+
+        <div class="cell"></div>
+        <div class="cell" id="split-cell-8">
+            <div id="gallery-container"></div>
+        </div>
+        <div class="cell"></div>
+
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+
+    <div id="custom-cursor"></div>
+    <script src="/src/js/cursor.js" defer></script>
+
+    <script>
+        (function() {
+            // ---- Gallery loader ----
+            const container = document.getElementById('gallery-container');
+            if (!container) return;
+
+            fetch('/gallery_data.json')
+                .then(res => {
+                    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                    return res.json();
+                })
+                .then(items => {
+                    if (!items || items.length === 0) {
+                        container.innerHTML =
+                            '<p style="color:white;padding:2.5rem;text-align:center;">No gallery items found.</p>';
+                        return;
+                    }
+
+                    items.forEach(item => {
+                        const div = document.createElement('div');
+                        div.className = 'gallery-item';
+
+                        let media;
+                        if (item.type && item.type.startsWith('image/')) {
+                            media = document.createElement('img');
+                            media.src = item.src;
+                            media.alt = item.caption || '';
+                            media.loading = 'lazy';
+                        } else if (item.type && item.type.startsWith('video/')) {
+                            media = document.createElement('video');
+                            media.src = item.src;
+                            media.autoplay = true;
+                            media.loop = true;
+                            media.muted = true;
+                            media.playsInline = true;
+                            media.controls = false;
+                            media.loading = 'lazy';
+                        } else {
+                            return;
+                        }
+
+                        div.appendChild(media);
+
+                        const caption = document.createElement('div');
+                        caption.className = 'caption';
+                        caption.textContent = item.caption || '';
+                        div.appendChild(caption);
+
+                        container.appendChild(div);
+                    });
+                })
+                .catch(err => {
+                    console.error('Gallery load error:', err);
+                    container.innerHTML = `<p style="color:white;padding:2.5rem;text-align:center;">Could not load gallery data.</p>`;
+                });
+
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEVIN.FBX | 3D Artist</title>
+    <meta name="description" content="Kevin Tran is a 3D animator and motion designer based in Melbourne, Australia.">
+    <meta name="author" content="Kevin Tran">
+    <meta name="keywords" content="3D, animation, designer, Melbourne, portfolio">
+    <meta property="og:title" content="KEVIN.FBX | 3D Artist">
+    <meta property="og:description" content="Kevin Tran is a 3D animator and motion designer based in Melbourne, Australia.">
+    <meta property="og:url" content="https://kevin-fbx.vercel.app">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KEVIN.FBX | 3D Artist">
+    <meta name="twitter:description" content="Kevin Tran is a 3D animator and motion designer based in Melbourne, Australia.">
+    <link rel="stylesheet" href="/src/css/styles.css">
+    <link rel="stylesheet" href="/src/css/landing.css">
+    <link rel="icon" type="image/png" href="/assets/images/png/favicon.png"/>
+</head>
+<body>
+    <div class="grid">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+
+        <div class="cell"></div>
+        <div class="cell" id="split-cell">
+            <div class="sub-grid">
+                <div class="sub-cell logo-cell">
+                    <img src="/assets/images/svg/logo.svg" alt="Logo" class="logo">
+                </div>
+                <div class="menu-bar">
+                    <div class="menu-item"><a href="/index.html" class="active">HOME</a></div>
+                    <div class="menu-item"><a href="/projects.html">PROJECTS</a></div>
+                    <div class="menu-item"><a href="/gallery.html">GALLERY</a></div>
+                    <div class="menu-item"><a href="/about.html">ABOUT</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell" id="split-cell-8">
+            <div class="sub-grid-8">
+                <div class="col-left">3D animator and designer who sets ideas in <span class="highlight">motion.</span></div>
+                <div class="col-right" id="video-mask-container">
+                    <video id="wireframe-video" autoplay loop muted playsinline class="landing-video landing-video-wireframe">
+                        <source src="/assets/videos/landing_wireframe.webm" type="video/webm">
+                    </video>
+
+                    <video id="render-video" autoplay loop muted playsinline class="landing-video landing-video-render">
+                        <source src="/assets/videos/landing_render.webm" type="video/webm">
+                    </video>
+
+                    <div class="inner-grid-4x4" id="landing-mask-grid" aria-hidden="true"></div>
+                </div>
+            </div>
+        </div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+    <div id="custom-cursor"></div>
+    <script src="/src/js/landing-mask.js" defer></script>
+    <script src="/src/js/cursor.js" defer></script>
+</body>
+</html>

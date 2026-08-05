@@ -1,0 +1,164 @@
+#content-cell {
+    --detail-border-width: 0px;
+    padding: 0;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    touch-action: pan-x;
+    scroll-behavior: smooth;
+}
+
+.parent {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: max-content;
+    align-items: stretch;
+    min-width: 100%;
+    flex-shrink: 0;
+    height: 100%;
+    padding: 2%;
+    background: var(--color-bg);
+}
+
+img,
+video {
+    display: block;
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+}
+
+.text {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    color: var(--color-white);
+    align-items: center;
+}
+
+.detail-media {
+    height: 100%;
+    width: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.project-divider {
+    flex: 0 0 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+}
+
+.first-root,
+.second-root,
+.third-root,
+.fourth-root {
+    flex-shrink: 0;
+    min-width: 0;
+}
+
+.first-root {
+    flex: 0 0 44dvw;
+    height: 100%;
+    min-height: 0;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+}
+
+.first-top {
+    grid-row: 1;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.first-bottom {
+    grid-row: 2;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.second-root {
+    flex: 0 0 25vw;
+    height: 100%;
+    min-height: 0;
+}
+
+.third-root {
+    flex: 0 0 20vw;
+    height: 100%;
+    min-height: 0;
+    margin-left: 1vw;
+}
+
+.fourth-root {
+    flex: 0 0 43dvw;
+    height: 100%;
+    min-height: 0;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+.fourth-top {
+    grid-row: 1;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.fourth-bottom {
+    grid-row: 2;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.fifth-root {
+    flex: 0 0 44dvw;
+    height: 100%;
+    min-height: 0;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    margin-left: 3vw;
+}
+
+.fifth-top {
+    grid-row: 1;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fifth-bottom {
+    grid-row: 2;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sixth-root {
+    flex: 0 0 44dvw;
+    height: 100%;
+    min-height: 0;
+    margin-left: 6vw;
+    display: flex;
+    align-items: center;
+}

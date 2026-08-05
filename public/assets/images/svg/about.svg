@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="About" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 959.62 400">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        font-family: InstrumentSerif-Italic, 'Instrument Serif';
+        font-size: 181.5px;
+        font-style: italic;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        font-family: PFPixelscriptPro, 'PF Pixelscript Pro';
+        font-size: 132.72px;
+      }
+    </style>
+  </defs>
+  <text class="cls-3" transform="translate(1.08 266.54)"><tspan x="0" y="0">A</tspan></text>
+  <text class="cls-2" transform="translate(318.34 209.23)"><tspan x="0" y="0">B</tspan><tspan class="cls-1" x="86.94" y="0">O</tspan><tspan x="183.5" y="0">UT</tspan></text>
+</svg>

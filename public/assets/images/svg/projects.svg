@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Projects" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 959.62 400">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: PFPixelscriptPro, 'PF Pixelscript Pro';
+        font-size: 149.84px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2 {
+        font-family: InstrumentSerif-Italic, 'Instrument Serif';
+        font-size: 178.85px;
+        font-style: italic;
+      }
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(1.08 263.45)"><tspan x="0" y="0">P</tspan></text>
+  <text class="cls-2" transform="translate(376.18 207.41)"><tspan class="cls-3" x="0" y="0">R</tspan><tspan x="89.6" y="0">OJECTS</tspan></text>
+</svg>

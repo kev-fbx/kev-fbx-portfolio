@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_9" data-name="Layer 9" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 927.13 400">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: PFPixelscriptPro, 'PF Pixelscript Pro';
+        font-size: 132.56px;
+        letter-spacing: -.25em;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-family: InstrumentSerif-Italic, 'Instrument Serif';
+        font-size: 178.85px;
+        font-style: italic;
+      }
+    </style>
+  </defs>
+  <text class="cls-2" transform="translate(272.32 206.23)"><tspan x="0" y="0">EIDO</tspan></text>
+  <text class="cls-1" transform="translate(-1.99 264.06)"><tspan x="0" y="0">L</tspan></text>
+</svg>

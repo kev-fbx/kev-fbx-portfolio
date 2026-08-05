@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Gallery" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 959.62 400">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2 {
+        font-family: InstrumentSerif-Italic, 'Instrument Serif';
+        font-size: 178.66px;
+        font-style: italic;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        font-family: PFPixelscriptPro, 'PF Pixelscript Pro';
+        font-size: 138.48px;
+      }
+
+      .cls-4 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <text class="cls-3" transform="translate(1.47 278.36)"><tspan x="0" y="0">G</tspan></text>
+  <text class="cls-2" transform="translate(304.88 207.15)"><tspan class="cls-1" x="0" y="0">A</tspan><tspan class="cls-5" x="78.79" y="0">LLE</tspan><tspan class="cls-4" x="307.82" y="0">R</tspan><tspan x="396.62" y="0">Y</tspan></text>
+</svg>
