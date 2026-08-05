@@ -60,12 +60,6 @@ body * {
     cursor: none !important;
 }
 
-/* Optional: enlarge on hover over images/videos */
-body.cursor-large #custom-cursor {
-    width: var(--cursor-size-hover);
-    height: var(--cursor-size-hover);
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -108,17 +102,14 @@ body {
     overflow: visible;
 }
 
-/* First column (indices 1, 4, 7, 10) – add left border */
 .cell:nth-child(3n+1) {
     border-left: 1px solid var(--color-grid-line);
 }
 
-/* First row (indices 1, 2, 3) – add top border */
 .cell:nth-child(-n+3) {
     border-top: 1px solid var(--color-grid-line);
 }
 
-/* ----- Cell 5 (logo + menu bar) ----- */
 #split-cell {
     padding: 0;
 }
@@ -132,7 +123,6 @@ body {
     background: var(--color-bg);
 }
 
-/* Logo cell – 52% width, 192% height (overflows down) */
 .logo-cell {
     flex: 0 0 var(--layout-col-left);
     height: 192%;
@@ -151,7 +141,6 @@ body {
     display: block;
 }
 
-/* Menu bar – fills the remaining 48% */
 .menu-bar {
     flex: 1;
     height: 100%;
