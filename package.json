@@ -1,12 +1,12 @@
 {
-  "name": "portfolio26",
+  "name": "portfolio-site",
   "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "next": "16.0.10"
+  "scripts": {
+    "start": "serve public -s -l 3000",
+    "build": "echo \"No build step for static site\""
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "typescript": "^5"
+    "serve": "^14.2.0"
   }
 }
