@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 299.7 299.7">
+  <!-- Generator: Adobe Illustrator 29.5.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 137)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: lime;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2">
+    <rect class="st0" width="299.7" height="299.7"/>
+    <g>
+      <path d="M85.1,206.1h23.9v-58l-34.1-25.6v73.3c0,5.7,4.6,10.2,10.2,10.2"/>
+      <path d="M190.7,206.1h23.9c5.7,0,10.2-4.6,10.2-10.2v-73.3l-34.1,25.6"/>
+      <path d="M190.7,103.8v44.3l34.1-25.6v-13.6c0-12.7-14.4-19.9-24.5-12.3"/>
+      <path d="M108.9,148.2v-44.3l40.9,30.7,40.9-30.7v44.3l-40.9,30.7"/>
+      <path d="M74.8,109v13.6l34.1,25.6v-44.3l-9.5-7.2c-10.1-7.6-24.5-.4-24.5,12.3"/>
+    </g>
+  </g>
+</svg>
