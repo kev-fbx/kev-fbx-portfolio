@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_9" data-name="Layer 9" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 927.13 400">
+<svg id="Layer_9" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 596.1 400">
+  <!-- Generator: Adobe Illustrator 29.5.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 137)  -->
   <defs>
     <style>
-      .cls-1 {
+      .st0 {
         font-family: PFPixelscriptPro, 'PF Pixelscript Pro';
-        font-size: 132.56px;
-        letter-spacing: -.25em;
+        font-size: 132.6px;
       }
 
-      .cls-1, .cls-2 {
+      .st0, .st1, .st2 {
+        isolation: isolate;
+      }
+
+      .st0, .st2 {
         fill: #fff;
       }
 
-      .cls-2 {
+      .st2 {
         font-family: InstrumentSerif-Italic, 'Instrument Serif';
-        font-size: 178.85px;
+        font-size: 178.9px;
         font-style: italic;
       }
     </style>
   </defs>
-  <text class="cls-2" transform="translate(272.32 206.23)"><tspan x="0" y="0">EIDO</tspan></text>
-  <text class="cls-1" transform="translate(-1.99 264.06)"><tspan x="0" y="0">L</tspan></text>
+  <g class="st1">
+    <text class="st2" transform="translate(272.3 206.2)"><tspan x="0" y="0">EIDO</tspan></text>
+  </g>
+  <g class="st1">
+    <text class="st0" transform="translate(-2 264.1)"><tspan x="0" y="0">L</tspan></text>
+  </g>
 </svg>
