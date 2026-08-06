@@ -44,12 +44,12 @@
             <div class="sub-grid-8">
                 <div class="col-left">3D animator and designer who sets ideas in <span class="highlight">motion.</span></div>
                 <div class="col-right" id="video-mask-container">
-                    <video id="wireframe-video" autoplay loop muted playsinline class="landing-video landing-video-wireframe">
-                        <source src="/assets/videos/landing_wireframe.webm" type="video/webm">
+                    <video id="wireframe-video" loop muted playsinline preload="auto" class="landing-video landing-video-wireframe">
+                        <source src="/assets/videos/home_wireframe.webm" type="video/webm">
                     </video>
 
-                    <video id="render-video" autoplay loop muted playsinline class="landing-video landing-video-render">
-                        <source src="/assets/videos/landing_render.webm" type="video/webm">
+                    <video id="render-video" loop muted playsinline preload="auto" class="landing-video landing-video-render">
+                        <source src="/assets/videos/home_render.webm" type="video/webm">
                     </video>
 
                     <div class="inner-grid-4x4" id="mask-grid" aria-hidden="true"></div>
@@ -65,6 +65,7 @@
         <div class="cell mobile-fill"></div>
     </div>
     <div id="custom-cursor"></div>
+    <script src="/src/js/video-sync.js" defer></script>
     <script src="/src/js/grid-mask.js" defer></script>
     <script src="/src/js/cursor.js" defer></script>
 </body>

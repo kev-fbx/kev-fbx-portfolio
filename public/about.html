@@ -46,11 +46,11 @@
                 <div class="col-left">Kevin Tran is a computer science student based in Melbourne, Australia with a love for 3D graphics, motion design and animation 
                     with <span class="highlight">3D art freelance experience</span> using Blender, Cinema 4D, DaVinci Resolve and Adobe Creative Suite. Currently open to work.</div>
                 <div class="col-right" id="video-mask-container">
-                    <video id="wireframe-video" autoplay loop muted playsinline class="landing-video landing-video-wireframe">
+                    <video id="wireframe-video" loop muted playsinline preload="auto" class="landing-video landing-video-wireframe">
                         <source src="/assets/videos/about_render.webm" type="video/webm">
                     </video>
 
-                    <video id="render-video" autoplay loop muted playsinline class="landing-video landing-video-render">
+                    <video id="render-video" loop muted playsinline preload="auto" class="landing-video landing-video-render">
                         <source src="/assets/videos/about_wireframe.webm" type="video/webm">
                     </video>
                     <div class="inner-grid-4x4" id="mask-grid"></div>
@@ -80,6 +80,7 @@
         <div class="cell mobile-fill"></div>
     </div>
     <div id="custom-cursor"></div>
+    <script src="/src/js/video-sync.js" defer></script>
     <script src="/src/js/grid-mask.js" defer></script>
     <script src="/src/js/cursor.js" defer></script>
 </body>

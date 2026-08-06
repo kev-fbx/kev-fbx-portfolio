@@ -222,7 +222,8 @@
         transform: none;
         padding: 1.25rem 1.25rem;
         gap: 0.25rem;
-        --project-role-lines: 2;
+        font-size: clamp(0.95rem, 4vw, 1.25rem);
+        --project-role-lines: 3;
     }
 }
 
