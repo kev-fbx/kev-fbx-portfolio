@@ -1,6 +1,6 @@
 (function () {
     const READY_STATE_HAVE_FUTURE_DATA = 3;
-    const START_FALLBACK_MS = 8000;
+    const START_FALLBACK_MS = 3000;
 
     function whenReady(video) {
         return new Promise((resolve) => {
