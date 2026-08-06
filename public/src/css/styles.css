@@ -35,10 +35,9 @@
     --font-display: 'Instrument Serif', serif;
     --font-body: 'PP Neue Montreal', sans-serif;
     --font-size-body: 2.5rem;
+    --font-size-menu: clamp(1.2rem, 2.5vw, 2.5rem);
     --layout-col-left: 52%;
-    --layout-col-right: calc(100% - var(--layout-col-left));
     --cursor-size: 30px;
-    --cursor-size-hover: 50px;
 }
 
 #custom-cursor {
@@ -46,7 +45,6 @@
     width: var(--cursor-size);
     height: var(--cursor-size);
     background: var(--color-white);
-    /* mix-blend-mode: difference; */
     border: 1px solid rgba(255, 255, 255, 0.3);
     pointer-events: none;
     z-index: 99999;
@@ -79,7 +77,7 @@ body {
     display: inline;
     font-family: var(--font-body);
     font-style: italic;
-    padding: 0 6px;
+    padding: 0 0.375rem;
 }
 
 .grid {
@@ -137,7 +135,9 @@ body {
 .logo {
     height: 100%;
     width: auto;
+    max-width: 100%;
     object-fit: contain;
+    object-position: left top;
     display: block;
 }
 
@@ -167,11 +167,11 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 4px 16px;
+    padding: 0.25rem 1rem;
     position: relative;
     z-index: 1;
     font-family: var(--font-display);
-    font-size: clamp(1.2rem, 2.5vw, 2.5rem);
+    font-size: var(--font-size-menu);
     white-space: nowrap;
 }
 
@@ -219,5 +219,126 @@ body {
     }
     to {
         transform: scaleX(1);
+    }
+}
+
+#scroll-bar-cell {
+    padding: 0 2vw;
+}
+
+.scroll-bar-status {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    width: 100%;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    color: var(--color-white);
+}
+
+.scroll-bar-track {
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+
+.scroll-bar-progress {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    height: 3px;
+    width: 20%;
+    background: var(--color-accent);
+}
+
+.cell.mobile-fill {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+    html,
+    body {
+        height: auto;
+        min-height: 100dvh;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    #custom-cursor {
+        display: none;
+    }
+
+    body,
+    body * {
+        cursor: auto !important;
+    }
+
+    .grid {
+        grid-template-rows: 5vh 13vh 7vh auto 7vh;
+        height: auto;
+        min-height: 100dvh;
+    }
+
+    .cell.mobile-fill {
+        display: flex;
+    }
+
+    .cell:nth-child(5) {
+        grid-row: 2 / 4;
+        grid-column: 2;
+    }
+
+    .cell:nth-child(8) {
+        grid-row: 4;
+        grid-column: 2;
+    }
+
+    .cell:nth-child(11) {
+        grid-row: 5;
+        grid-column: 2;
+    }
+
+    .sub-grid {
+        flex-direction: column;
+    }
+
+    .logo-cell {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 65%;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 0;
+        border-bottom: 1px solid var(--color-grid-line);
+    }
+
+    .logo {
+        height: 100%;
+        width: auto;
+        max-width: 100%;
+        object-position: center;
+    }
+
+    .menu-bar {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 35%;
+        overflow: visible;
+    }
+
+    :root {
+        --font-size-menu: clamp(1.05rem, 5vw, 1.8rem);
+    }
+
+    .menu-item a {
+        padding: 0.25rem 0.3rem;
+    }
+
+    .scroll-bar-status {
+        display: none;
     }
 }

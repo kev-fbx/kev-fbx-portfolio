@@ -1,0 +1,190 @@
+:root {
+    --content-gap: clamp(2rem, 4vw, 6rem);
+    --content-pad-x: 3.5vw;
+    --content-pad-y: 2vh;
+    --content-height: 72vh;
+    --divider-height: calc(var(--content-height) - 2 * var(--content-pad-y));
+    --divider-width: 44vw;
+    --divider-min-width: 15rem;
+    --divider-row-major: 3fr;
+    --divider-row-minor: 1fr;
+    --divider-row-gap: 1.5vh;
+    --divider-media-share: 0.75;
+    --divider-text-size: clamp(1rem, 5.5cqi, 2.5rem);
+    --divider-line-height: 1.15;
+    --content-gap-mobile: 6vh;
+    --content-pad-mobile: 6vh 6vw;
+    --divider-row-gap-mobile: 2vh;
+    --divider-text-size-mobile: clamp(1.1rem, 4.5vw, 1.6rem);
+}
+
+#content-cell {
+    padding: 0;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.project-content {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: var(--content-gap);
+    padding: var(--content-pad-y) var(--content-pad-x);
+    background: var(--color-bg);
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scroll-behavior: smooth;
+    touch-action: pan-x;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.project-content::-webkit-scrollbar {
+    display: none;
+}
+
+.project-content:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: -2px;
+}
+
+.divider {
+    flex: 0 0 var(--divider-width);
+    min-width: var(--divider-min-width);
+
+    height: 100%;
+    min-height: 0;
+
+    display: grid;
+    grid-template-rows: var(--divider-rows, 1fr);
+    gap: var(--divider-row-gap);
+
+    --divider-media-height: var(--divider-height);
+
+    container-type: inline-size;
+}
+
+.divider-media-top {
+    --divider-rows: var(--divider-row-major) var(--divider-row-minor);
+}
+
+.divider-caption-top {
+    --divider-rows: var(--divider-row-minor) var(--divider-row-major);
+}
+
+.divider-solo {
+    --divider-rows: 1fr;
+}
+
+.divider-media-top,
+.divider-caption-top {
+    --divider-media-height: calc((var(--divider-height) - var(--divider-row-gap)) * var(--divider-media-share));
+}
+
+.divider-16x9 {
+    --media-ratio: 16 / 9;
+}
+
+.divider-4x5 {
+    --media-ratio: 4 / 5;
+}
+
+.divider-9x16 {
+    --media-ratio: 9 / 16;
+}
+
+.divider-1x1 {
+    --media-ratio: 1;
+}
+
+.divider-16x9,
+.divider-4x5,
+.divider-9x16,
+.divider-1x1,
+.divider-fit {
+    --divider-width: calc(var(--divider-media-height) * var(--media-ratio));
+}
+
+.divider-end {
+    --divider-align: flex-end;
+    --divider-text-align: right;
+}
+
+.divider:has(> .divider-caption:only-child) {
+    --divider-align-auto: center;
+}
+
+.divider-media,
+.divider-caption {
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: var(--divider-align, var(--divider-align-auto, flex-start));
+    overflow: hidden;
+}
+
+.divider-media>img,
+.divider-media>video {
+    display: block;
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.divider-text {
+    font-family: var(--font-body);
+    font-size: var(--divider-text-size);
+    line-height: var(--divider-line-height);
+    color: var(--color-white);
+    text-align: var(--divider-text-align, left);
+}
+
+@media (max-width: 1100px) {
+    #content-cell {
+        height: auto;
+        overflow: visible;
+    }
+
+    .project-content {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        padding: var(--content-pad-mobile);
+        gap: var(--content-gap-mobile);
+        overflow: visible;
+        touch-action: auto;
+    }
+
+    .divider {
+        flex: 0 0 auto;
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        grid-template-rows: auto auto;
+        gap: var(--divider-row-gap-mobile);
+        --divider-align: initial;
+        --divider-text-align: initial;
+    }
+
+    .divider-media,
+    .divider-caption {
+        overflow: visible;
+    }
+
+    .divider-media>img,
+    .divider-media>video {
+        width: 100%;
+        height: auto;
+        max-height: none;
+    }
+
+    .divider-text {
+        font-size: var(--divider-text-size-mobile);
+    }
+}

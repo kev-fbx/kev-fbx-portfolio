@@ -16,7 +16,7 @@
     <meta name="twitter:description" content="Kevin Tran is a 3D animator and motion designer based in Melbourne, Australia.">
     <link rel="stylesheet" href="/src/css/styles.css">
     <link rel="stylesheet" href="/src/css/projects.css">
-    <link rel="icon" type="image/webp" href="/assets/images/webp/favicon.webp"/>
+    <link rel="icon" type="image/png" href="/assets/images/png/favicon.png"/>
 </head>
 <body>
     <div class="grid">
@@ -42,14 +42,14 @@
 
         <div class="cell"></div>
         <div class="cell" id="projects-cell">
-            <div class="project-rail" id="project-rail" tabindex="0" role="list" aria-label="Selected projects">
+            <div class="project-scroll-bar" id="project-scroll-bar" tabindex="0" role="list" aria-label="Selected projects">
                 <a class="project-card" role="listitem" href="/src/projects/codebrew2026.html">
                     <div class="project-media project-media-stack">
                         <img class="project-media-render" src="/assets/projects/codebrew2026/projects_codebrew2026_render.webp" alt="Codebrew thumbnail" />
                         <img class="project-media-wireframe" src="/assets/projects/codebrew2026/projects_codebrew2026_wireframe.webp" alt="Codebrew thumbnail" aria-hidden="true" />
                     </div>
                     <div class="project-info">
-                        <h2 class="project-title">CODEBREW</h2>
+                        <h2 class="project-title"><span>CODEBREW</span></h2>
                         <p class="project-role">Designing and animating promotional material for CISSA's flagship hackathon.</p>
                     </div>
                 </a>
@@ -60,7 +60,7 @@
                         <img class="project-media-wireframe" src="/assets/projects/pz_client_1/projects_pz_client_1_wireframe.webp" alt="PZ Video Intro thumbnail" aria-hidden="true" />
                     </div>
                     <div class="project-info">
-                        <h2 class="project-title">PZ VIDEO INTRO</h2>
+                        <h2 class="project-title"><span>PZ VIDEO INTRO</span></h2>
                         <p class="project-role">Creating a gripping YouTube video opener to capture audiences' attention for a client.</p>
                     </div>
                 </a>
@@ -71,8 +71,8 @@
                         <img class="project-media-wireframe" src="/assets/projects/knox_event/projects_knox_event_wireframe.webp" alt="PZ Video Intro thumbnail" aria-hidden="true" />
                     </div>
                     <div class="project-info">
-                        <h2 class="project-title">THE KNOX EVENT: LBMW</h2>
-                        <p class="project-role">YouTube animation series loved by thousands.<br><br></p>
+                        <h2 class="project-title"><span>THE KNOX EVENT</span></h2>
+                        <p class="project-role">YouTube animation series loved by thousands.</p>
                     </div>
                 </a>
 
@@ -82,7 +82,7 @@
                         <img class="project-media-wireframe" src="/assets/projects/leido/projects_leido_wireframe.webp" alt="LEIDO Poster" aria-hidden="true" />
                     </div>
                     <div class="project-info">
-                        <h2 class="project-title">LEIDO</h2>
+                        <h2 class="project-title"><span>LEIDO</span></h2>
                         <p class="project-role">Producing animated stories that captivate audiences around the world.</p>
                     </div>
                 </a>
@@ -91,12 +91,15 @@
         <div class="cell"></div>
 
         <div class="cell"></div>
-        <div class="cell" id="rail-status-cell">
-            <div class="rail-status">
-                <div class="rail-track"><div class="rail-progress" id="rail-progress"></div></div>
+        <div class="cell" id="scroll-bar-cell">
+            <div class="scroll-bar-status">
+                <div class="scroll-bar-track"><div class="scroll-bar-progress" id="scroll-bar-progress"></div></div>
             </div>
         </div>
         <div class="cell"></div>
+
+        <div class="cell mobile-fill"></div>
+        <div class="cell mobile-fill"></div>
     </div>
     <div id="custom-cursor"></div>
     <script src="/src/js/cursor.js" defer></script>

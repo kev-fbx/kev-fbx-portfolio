@@ -15,7 +15,7 @@
     <meta name="twitter:title" content="KEVIN.FBX | 3D Artist">
     <meta name="twitter:description" content="Kevin Tran is a 3D animator and motion designer based in Melbourne, Australia.">
     <link rel="stylesheet" href="/src/css/styles.css">
-    <link rel="stylesheet" href="/src/css/knox_event.css">
+    <link rel="stylesheet" href="/src/css/project-content.css">
     <link rel="icon" type="image/png" href="/assets/images/png/favicon.png"/>
 </head>
 <body>
@@ -42,72 +42,85 @@
 
         <div class="cell"></div>
         <div class="cell" id="content-cell">
-            <div class="parent">
-                <div class="project-divider">
-                    <div class="first-root">
-                        <div class="first-top">
-                            <video src="/assets/projects/knox_event/projects_knox_event_trailer.webm" autoplay muted loop></video>
-                        </div>
-                        <div class="first-bottom">
-                            <p class="text">
-                                Under the alias of LEIDO, Eoin McDonald and I <br>
-                                scripted, animated and produced...
-                            </p>
-                        </div>
+            <div class="project-content" id="project-content" tabindex="0">
+                <section class="divider divider-media-top divider-16x9">
+                    <div class="divider-media">
+                        <video src="/assets/projects/knox_event/projects_knox_event_trailer.webm" autoplay muted loop playsinline controls></video>
                     </div>
-                    <div class="second-root">
-                        <div class="second-top">
-                            <p class="text">
-                                A 3D animated YouTube series...
-                            </p>
-                        </div>
-                        <div class="second-bottom">
-                            <img src="/assets/projects/knox_event/projects_knox_event_wip.webp"/>
-                        </div>
+                    <div class="divider-caption">
+                        <p class="divider-text">
+                            Under the alias of LEIDO, Eoin McDonald and I <br>
+                            scripted, animated and produced...
+                        </p>
                     </div>
-                    <div class="third-root">
-                        <img src="/assets/projects/knox_event/projects_knox_event_president.webp" />
+                </section>
+
+                <section class="divider divider-caption-top divider-16x9">
+                    <div class="divider-caption">
+                        <p class="divider-text">
+                            A 3D animated YouTube series...
+                        </p>
                     </div>
-                    <div class="fourth-root">
-                        <div class="fourth-top">
-                            <video src="/assets/projects/knox_event/projects_knox_event_protest_1.webm" autoplay muted loop></video>
-                        </div>
-                        <div class="fourth-bottom">
-                            <p class="text">That is loved by thousands around the world...</p>
-                        </div>
+                    <div class="divider-media">
+                        <img src="/assets/projects/knox_event/projects_knox_event_wip.webp" alt="Work in progress render" />
                     </div>
-                    <div class="fifth-root">
-                            <video src="/assets/projects/knox_event/projects_knox_event_military_1.webm" autoplay muted loop></video>
+                </section>
+
+                <section class="divider divider-solo divider-1x1">
+                    <div class="divider-media">
+                        <img src="/assets/projects/knox_event/projects_knox_event_president.webp" alt="The president" />
                     </div>
-                    <div class="sixth-root">
-                        <div class="sixth-top">
-                            <p class="text">And the series hasn't even reached <br>
-                            it's climax yet.</p>
-                        </div>
-                        <div class="sixth-bottom">
-                            <video src="/assets/projects/knox_event/projects_knox_event_eg_1.webm" autoplay muted loop></video>
-                        </div>
+                </section>
+
+                <section class="divider divider-media-top divider-end divider-16x9">
+                    <div class="divider-media">
+                        <video src="/assets/projects/knox_event/projects_knox_event_protest_1.webm" autoplay muted loop playsinline></video>
                     </div>
-                    <div class="seventh-root">
-                        <p class="text">
-                            The Knox Event: LBMW animated <br> 
+                    <div class="divider-caption">
+                        <p class="divider-text">That is loved by thousands around the world...</p>
+                    </div>
+                </section>
+
+                <section class="divider divider-solo divider-16x9">
+                    <div class="divider-media">
+                        <video src="/assets/projects/knox_event/projects_knox_event_bts_1.webm" autoplay muted loop playsinline></video>
+                    </div>
+                </section>
+
+                <section class="divider divider-caption-top divider-16x9">
+                    <div class="divider-caption">
+                        <p class="divider-text">And the series hasn't even reached <br>
+                        it's climax yet.</p>
+                    </div>
+                    <div class="divider-media">
+                        <video src="/assets/projects/knox_event/projects_knox_event_eg_1.webm" autoplay muted loop playsinline></video>
+                    </div>
+                </section>
+
+                <section class="divider divider-solo">
+                    <div class="divider-caption">
+                        <p class="divider-text">
+                            The Knox Event: LBMW animated <br>
                             series has reached more than <br>
-                            <span class="highlight">1,250,000 views</span> across all <br> 
+                            <span class="highlight">1,250,000 views</span> across all <br>
                             socials thus far.
                         </p>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
         <div class="cell"></div>
 
         <div class="cell"></div>
-        <div class="cell" id="rail-status-cell">
-            <div class="rail-status">
-                <div class="rail-track"><div class="rail-progress" id="rail-progress"></div></div>
+        <div class="cell" id="scroll-bar-cell">
+            <div class="scroll-bar-status">
+                <div class="scroll-bar-track"><div class="scroll-bar-progress" id="scroll-bar-progress"></div></div>
             </div>
         </div>
         <div class="cell"></div>
+
+        <div class="cell mobile-fill"></div>
+        <div class="cell mobile-fill"></div>
     </div>
     <div id="custom-cursor"></div>
     <script src="/src/js/cursor.js" defer></script>

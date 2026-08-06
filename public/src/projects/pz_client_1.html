@@ -15,7 +15,7 @@
     <meta name="twitter:title" content="KEVIN.FBX | 3D Artist">
     <meta name="twitter:description" content="Kevin Tran is a 3D animator and motion designer based in Melbourne, Australia.">
     <link rel="stylesheet" href="/src/css/styles.css">
-    <link rel="stylesheet" href="/src/css/pz_client_1.css">
+    <link rel="stylesheet" href="/src/css/project-content.css">
     <link rel="icon" type="image/png" href="/assets/images/png/favicon.png"/>
 </head>
 <body>
@@ -42,60 +42,79 @@
 
         <div class="cell"></div>
         <div class="cell" id="content-cell">
-            <div class="parent">
-                <div class="project-divider">
-                    <div class="first-root">
-                        <div class="first-top">
-                            <video src="/assets/projects/pz_client_1/projects_pz_client_1_deliverable.webm" autoplay muted loop></video>
-                        </div>
-                        <div class="first-bottom">
-                            <p class="text">
-                                Our client contacted us via Fiverr and <br>
-                                provided storyboards for their vision...
-                            </p>
-                        </div>
+            <div class="project-content" id="project-content" tabindex="0">
+                <section class="divider divider-media-top divider-16x9">
+                    <div class="divider-media">
+                        <video src="/assets/projects/pz_client_1/projects_pz_client_1_deliverable.webm" autoplay muted loop playsinline></video>
                     </div>
-                    <div class="second-root">
-                        <img src="/assets/projects/pz_client_1/projects_pz_client_1_storyboard_1.webp" />
+                    <div class="divider-caption">
+                        <p class="divider-text">
+                            Our client contacted us via Fiverr and <br>
+                            provided storyboards for their vision...
+                        </p>
                     </div>
-                    <div class="second-root">
-                        <img src="/assets/projects/pz_client_1/projects_pz_client_1_storyboard_2.webp" />
+                </section>
+
+                <section class="divider divider-solo divider-1x1">
+                    <div class="divider-media">
+                        <img src="/assets/projects/pz_client_1/projects_pz_client_1_storyboard_1.webp" alt="Storyboard panel 1" />
                     </div>
-                    <div class="second-root">
-                        <img src="/assets/projects/pz_client_1/projects_pz_client_1_storyboard_3.webp" />
+                </section>
+
+                <section class="divider divider-solo divider-1x1">
+                    <div class="divider-media">
+                        <img src="/assets/projects/pz_client_1/projects_pz_client_1_storyboard_2.webp" alt="Storyboard panel 2" />
                     </div>
-                    <div class="fourth-root">
-                        <div class="fourth-top">
-                            <p class="text">And with a fast iterative workflow...
-                            </p>
-                        </div>
-                        <div class="fourth-bottom">
-                            <video src="/assets/projects/pz_client_1/projects_pz_client_1_breakdown.webm" autoplay muted loop></video>
-                        </div>
+                </section>
+
+                <section class="divider divider-solo divider-1x1">
+                    <div class="divider-media">
+                        <img src="/assets/projects/pz_client_1/projects_pz_client_1_storyboard_3.webp" alt="Storyboard panel 3" />
                     </div>
-                    <div class="fifth-root">
-                        <video src="/assets/projects/pz_client_1/projects_pz_client_1_soldier.webm" autoplay muted loop></video>
+                </section>
+
+                <section class="divider divider-caption-top divider-end divider-16x9">
+                    <div class="divider-caption">
+                        <p class="divider-text">And with a fast iterative workflow...</p>
                     </div>
-                    <div class="fifth-root">
-                        <video src="/assets/projects/pz_client_1/projects_pz_client_1_truck.webm" autoplay muted loop></video>
+                    <div class="divider-media">
+                        <video src="/assets/projects/pz_client_1/projects_pz_client_1_breakdown.webm" autoplay muted loop playsinline></video>
                     </div>
-                    <div class="sixth-root">
-                        <p class="text">
+                </section>
+
+                <section class="divider divider-solo divider-1x1">
+                    <div class="divider-media">
+                        <video src="/assets/projects/pz_client_1/projects_pz_client_1_soldier.webm" autoplay muted loop playsinline></video>
+                    </div>
+                </section>
+
+                <section class="divider divider-solo divider-1x1">
+                    <div class="divider-media">
+                        <video src="/assets/projects/pz_client_1/projects_pz_client_1_truck.webm" autoplay muted loop playsinline></video>
+                    </div>
+                </section>
+
+                <section class="divider divider-solo">
+                    <div class="divider-caption">
+                        <p class="divider-text">
                             Our client's YouTube video <br> received more than <span class="highlight">153,000 views.</span>
                         </p>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
         <div class="cell"></div>
 
         <div class="cell"></div>
-        <div class="cell" id="rail-status-cell">
-            <div class="rail-status">
-                <div class="rail-track"><div class="rail-progress" id="rail-progress"></div></div>
+        <div class="cell" id="scroll-bar-cell">
+            <div class="scroll-bar-status">
+                <div class="scroll-bar-track"><div class="scroll-bar-progress" id="scroll-bar-progress"></div></div>
             </div>
         </div>
         <div class="cell"></div>
+
+        <div class="cell mobile-fill"></div>
+        <div class="cell mobile-fill"></div>
     </div>
     <div id="custom-cursor"></div>
     <script src="/src/js/cursor.js" defer></script>

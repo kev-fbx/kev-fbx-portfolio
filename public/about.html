@@ -53,8 +53,21 @@
                     <video id="render-video" autoplay loop muted playsinline class="landing-video landing-video-render">
                         <source src="/assets/videos/about_wireframe.webm" type="video/webm">
                     </video>
-
-                    <div class="inner-grid-4x4" id="landing-mask-grid" aria-hidden="true"></div>
+                    <div class="inner-grid-4x4" id="mask-grid"></div>
+                    <template id="mask-cell-icons">
+                        <a class="social-link" data-cell="2" href="https://www.instagram.com/kevin.fbx/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <img class="social-icon" src="/assets/images/svg/about_instagram.svg" alt="">
+                            <img class="social-icon social-icon-hover" src="/assets/images/svg/about_instagram_hover.svg" alt="">
+                        </a>
+                        <a class="social-link" data-cell="5" href="https://www.youtube.com/@LEIDO_PROD" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <img class="social-icon" src="/assets/images/svg/about_youtube.svg" alt="">
+                            <img class="social-icon social-icon-hover" src="/assets/images/svg/about_youtube_hover.svg" alt="">
+                        </a>
+                        <a class="social-link" data-cell="12" href="mailto:kev.fbx@gmail.com" aria-label="Email">
+                            <img class="social-icon" src="/assets/images/svg/about_mail.svg" alt="">
+                            <img class="social-icon social-icon-hover" src="/assets/images/svg/about_mail_hover.svg" alt="">
+                        </a>
+                    </template>
                 </div>
             </div>
         </div>
@@ -62,9 +75,12 @@
         <div class="cell"></div>
         <div class="cell"></div>
         <div class="cell"></div>
+
+        <div class="cell mobile-fill"></div>
+        <div class="cell mobile-fill"></div>
     </div>
     <div id="custom-cursor"></div>
-    <script src="/src/js/landing-mask.js" defer></script>
+    <script src="/src/js/grid-mask.js" defer></script>
     <script src="/src/js/cursor.js" defer></script>
 </body>
 </html>

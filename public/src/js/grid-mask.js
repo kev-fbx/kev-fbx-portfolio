@@ -7,7 +7,7 @@
     const MIN_FADE_MS = 1300;
     const MAX_FADE_MS = 2800;
 
-    function randomBetween(min, max) {
+    function getRandomVal(min, max) {
         return min + Math.random() * (max - min);
     }
 
@@ -15,8 +15,8 @@
         return document.createElementNS('http://www.w3.org/2000/svg', tagName);
     }
 
-    function initLandingMask() {
-        const grid = document.getElementById('landing-mask-grid');
+    function initGridMask() {
+        const grid = document.getElementById('mask-grid');
         const container = document.getElementById('video-mask-container');
         const wireframeVideo = document.getElementById('wireframe-video');
         const renderVideo = document.getElementById('render-video');
@@ -26,15 +26,24 @@
         }
 
         grid.innerHTML = '';
+        const cellIcons = document.getElementById('mask-cell-icons');
 
         for (let index = 0; index < CELL_COUNT; index++) {
             const cell = document.createElement('div');
             cell.className = 'inner-cell';
+
+            const icon = cellIcons &&
+                cellIcons.content.querySelector('[data-cell="' + (index + 1) + '"]');
+
+            if (icon) {
+                cell.appendChild(icon.cloneNode(true));
+            }
+
             grid.appendChild(cell);
         }
 
         const svg = createSvgElement('svg');
-        svg.classList.add('landing-mask-defs');
+        svg.classList.add('grid-mask-defs');
         svg.setAttribute('aria-hidden', 'true');
         svg.setAttribute('focusable', 'false');
 
@@ -42,13 +51,13 @@
         svg.appendChild(defs);
 
         const wireframeMask = createSvgElement('mask');
-        wireframeMask.setAttribute('id', 'landing-wireframe-mask');
+        wireframeMask.setAttribute('id', 'grid-wireframe-mask');
         wireframeMask.setAttribute('maskUnits', 'objectBoundingBox');
         wireframeMask.setAttribute('maskContentUnits', 'objectBoundingBox');
         wireframeMask.setAttribute('mask-type', 'alpha');
 
         const renderMask = createSvgElement('mask');
-        renderMask.setAttribute('id', 'landing-render-mask');
+        renderMask.setAttribute('id', 'grid-render-mask');
         renderMask.setAttribute('maskUnits', 'objectBoundingBox');
         renderMask.setAttribute('maskContentUnits', 'objectBoundingBox');
         renderMask.setAttribute('mask-type', 'alpha');
@@ -95,10 +104,10 @@
         defs.appendChild(renderMask);
         container.appendChild(svg);
 
-        wireframeVideo.style.mask = 'url(#landing-wireframe-mask)';
-        wireframeVideo.style.webkitMask = 'url(#landing-wireframe-mask)';
-        renderVideo.style.mask = 'url(#landing-render-mask)';
-        renderVideo.style.webkitMask = 'url(#landing-render-mask)';
+        wireframeVideo.style.mask = 'url(#grid-wireframe-mask)';
+        wireframeVideo.style.webkitMask = 'url(#grid-wireframe-mask)';
+        renderVideo.style.mask = 'url(#grid-render-mask)';
+        renderVideo.style.webkitMask = 'url(#grid-render-mask)';
 
         let rafId = null;
 
@@ -116,7 +125,7 @@
 
             cell.timeoutId = window.setTimeout(() => {
                 startTransition(index);
-            }, randomBetween(MIN_HOLD_MS, MAX_HOLD_MS));
+            }, getRandomVal(MIN_HOLD_MS, MAX_HOLD_MS));
         }
 
         function startTransition(index) {
@@ -124,7 +133,7 @@
             cell.timeoutId = null;
             cell.target = cell.current === 'wireframe' ? 'render' : 'wireframe';
             cell.startTime = performance.now();
-            cell.duration = randomBetween(MIN_FADE_MS, MAX_FADE_MS);
+            cell.duration = getRandomVal(MIN_FADE_MS, MAX_FADE_MS);
 
             if (rafId === null) {
                 rafId = window.requestAnimationFrame(tick);
@@ -175,8 +184,8 @@
     }
 
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initLandingMask, { once: true });
+        document.addEventListener('DOMContentLoaded', initGridMask, { once: true });
     } else {
-        initLandingMask();
+        initGridMask();
     }
 })();
