@@ -1,24 +1,13 @@
 (function () {
-    const READY_STATE_HAVE_FUTURE_DATA = 3;
-    const START_FALLBACK_MS = 3000;
+    const READY_STATE_HAVE_ENOUGH_DATA = 4;
 
-    function whenReady(video) {
+    function whenCanPlayThrough(video) {
+        if (video.readyState >= READY_STATE_HAVE_ENOUGH_DATA) {
+            return Promise.resolve();
+        }
+
         return new Promise((resolve) => {
-            if (video.readyState >= READY_STATE_HAVE_FUTURE_DATA) {
-                resolve();
-                return;
-            }
-
-            const onReady = () => {
-                video.removeEventListener('canplaythrough', onReady);
-                video.removeEventListener('canplay', onReady);
-                video.removeEventListener('error', onReady);
-                resolve();
-            };
-
-            video.addEventListener('canplaythrough', onReady, { once: true });
-            video.addEventListener('canplay', onReady, { once: true });
-            video.addEventListener('error', onReady, { once: true });
+            video.addEventListener('canplaythrough', resolve, { once: true });
         });
     }
 
@@ -29,35 +18,10 @@
             return;
         }
 
-        let started = false;
-
-        function startTogether() {
-            if (started) {
-                return;
-            }
-
-            started = true;
-
+        Promise.all(videos.map(whenCanPlayThrough)).then(() => {
             for (const video of videos) {
-                if (video.currentTime !== 0) {
-                    video.currentTime = 0;
-                }
+                video.play().catch(() => {});
             }
-
-            for (const video of videos) {
-                const playback = video.play();
-
-                if (playback && typeof playback.catch === 'function') {
-                    playback.catch(() => {});
-                }
-            }
-        }
-
-        const fallbackId = window.setTimeout(startTogether, START_FALLBACK_MS);
-
-        Promise.all(videos.map(whenReady)).then(() => {
-            window.clearTimeout(fallbackId);
-            startTogether();
         });
     }
 

@@ -1,89 +1,70 @@
-const content = document.querySelector('.project-content');
+(function () {
+  const WHEEL_MULTIPLIER = 2;
+  const ITEMS = '.divider, .project-card';
 
-if (content) {
-  const isStacked = () => window.matchMedia('(max-width: 1100px)').matches;
+  const content = document.querySelector('.project-content, .project-scroll-bar');
 
-  content.addEventListener('wheel', (evt) => {
-    if (evt.deltaY === 0 || isStacked()) {
+  if (!content) {
+    return;
+  }
+
+  const stacked = window.matchMedia('(max-width: 1100px)');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const behaviour = () => (reduced.matches ? 'auto' : 'smooth');
+
+  window.addEventListener('wheel', (evt) => {
+    const delta = Math.abs(evt.deltaY) > Math.abs(evt.deltaX) ? evt.deltaY : evt.deltaX;
+
+    if (!delta || stacked.matches) {
       return;
     }
 
     const before = content.scrollLeft;
-    content.scrollLeft += evt.deltaY * 2;
+    content.scrollLeft += delta * WHEEL_MULTIPLIER;
 
     if (content.scrollLeft !== before) {
       evt.preventDefault();
     }
   }, { passive: false });
 
-  const smoothly = () =>
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
-
   const step = (direction) => {
-    const contentLeft = content.getBoundingClientRect().left;
-    const padLeft = parseFloat(getComputedStyle(content).paddingLeft) || 0;
-    const offsets = Array.from(content.querySelectorAll('.divider'), (divider) =>
-      divider.getBoundingClientRect().left - contentLeft - padLeft
-    );
+    const origin = content.getBoundingClientRect().left + (parseFloat(getComputedStyle(content).paddingLeft) || 0);
+    const offsets = Array.from(content.querySelectorAll(ITEMS), (item) => item.getBoundingClientRect().left - origin);
 
-    const target = direction > 0
-      ? offsets.find((offset) => offset > 1)
-      : offsets.filter((offset) => offset < -1).pop();
+    const target = direction > 0 ? offsets.find((offset) => offset > 1) : offsets.filter((offset) => offset < -1).pop();
 
-    if (target === undefined) {
-      return;
+    if (target !== undefined) {
+      content.scrollBy({ left: target, behavior: behaviour() });
     }
-
-    content.scrollBy({ left: target, behavior: smoothly() });
   };
 
-  const keys = {
-    ArrowRight: () => step(1),
-    ArrowLeft: () => step(-1),
-    Home: () => content.scrollTo({ left: 0, behavior: smoothly() }),
-    End: () => content.scrollTo({ left: content.scrollWidth, behavior: smoothly() })
-  };
+  window.addEventListener('keydown', (event) => {
+    const direction = event.key === 'ArrowRight' ? 1 : event.key === 'ArrowLeft' ? -1 : 0;
 
-  window.addEventListener('keydown', (evt) => {
-    if (isStacked() || evt.ctrlKey || evt.altKey || evt.metaKey) {
+    if (!direction || stacked.matches || event.ctrlKey || event.altKey || event.metaKey) {
       return;
     }
 
-    const target = evt.target;
-    if (target instanceof Element &&
-        target.closest('input, textarea, select, [contenteditable="true"]')) {
-      return;
-    }
-
-    const action = keys[evt.key];
-    if (!action) {
-      return;
-    }
-
-    evt.preventDefault();
-    action();
+    event.preventDefault();
+    step(direction);
   });
 
   const progress = document.getElementById('scroll-bar-progress');
 
-  if (progress) {
-    const update = () => {
-      const travel = content.scrollWidth - content.clientWidth;
-      const thumb = content.scrollWidth > 0
-        ? Math.min((content.clientWidth / content.scrollWidth) * 100, 100)
-        : 100;
-      const reached = travel > 0 ? content.scrollLeft / travel : 0;
-
-      progress.style.width = thumb + '%';
-      progress.style.left = reached * (100 - thumb) + '%';
-    };
-
-    content.addEventListener('scroll', () => {
-      window.requestAnimationFrame(update);
-    }, { passive: true });
-
-    window.addEventListener('resize', update);
-    window.addEventListener('load', update);
-    update();
+  if (!progress) {
+    return;
   }
-}
+
+  const update = () => {
+    const travel = content.scrollWidth - content.clientWidth;
+    const thumb = Math.min((content.clientWidth / content.scrollWidth) * 100, 100) || 100;
+
+    progress.style.width = thumb + '%';
+    progress.style.left = (travel > 0 ? content.scrollLeft / travel : 0) * (100 - thumb) + '%';
+  };
+
+  content.addEventListener('scroll', () => window.requestAnimationFrame(update), { passive: true });
+  window.addEventListener('resize', update);
+  window.addEventListener('load', update);
+  update();
+})();
